@@ -103,7 +103,11 @@ int Fraction::getRawDenominator() const {
 std::string Fraction::toString() {
     std::stringstream ss;
 
-    ss << this->numerator << '/' << this->denominator;
+    if (this->denominator == 1) {
+        ss << this->numerator;
+    } else {
+        ss << this->numerator << '/' << this->denominator;
+    }
 
     return ss.str();
 }

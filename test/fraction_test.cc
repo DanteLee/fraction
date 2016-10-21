@@ -4,10 +4,11 @@
 using namespace AWEMath;
 
 TEST(Fraction, constructor) {
-    Fraction a, b("-5/10"), c(std::string("3/12"));
-    EXPECT_STREQ(a.toString().c_str(), "0/1");
+    Fraction a, b("-5/10"), c(std::string("3/12")), d(12);
+    EXPECT_STREQ(a.toString().c_str(), "0");
     EXPECT_STREQ(b.toString().c_str(), "-1/2");
     EXPECT_STREQ(c.toString().c_str(), "1/4");
+    EXPECT_STREQ(d.toString().c_str(), "12");
 }
 
 TEST(Fraction, getXFunction) {
@@ -24,6 +25,12 @@ TEST(Fraction, valueOf) {
     float c=9, d=27;
 
     EXPECT_EQ(a.valueOf(), c/d);
+}
+
+TEST(Fraction, toString) {
+    Fraction a("12/-6");
+
+    EXPECT_STREQ(a.toString().c_str(), "-2");
 }
 
 TEST(Fraction, operatorOverride) {
