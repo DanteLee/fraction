@@ -11,6 +11,7 @@ class Fraction {
 public:
     Fraction();
     Fraction(const char *);
+    Fraction(const int);
     Fraction(const std::string &);
     Fraction(int, int);
 

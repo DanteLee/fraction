@@ -39,6 +39,10 @@ Fraction::Fraction(const char *input) {
     new (this) Fraction(inp);
 }
 
+Fraction::Fraction(const int up) {
+    new (this) Fraction(up, 1);
+}
+
 Fraction::Fraction(const std::string &input) {
     int up = 0, down = 1;
     size_t spliter = input.find('/');
